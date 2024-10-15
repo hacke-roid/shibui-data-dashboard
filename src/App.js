@@ -5,7 +5,7 @@ import { UserProvider } from './UserContext';
 import Login from './Login';
 import Register from './Register';
 import Dashboard from './Dashboard';
-// import './App.css';
+import './App.css';
 
 const App = () => {
     return (
