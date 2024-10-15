@@ -1,5 +1,48 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+Project Overview
+
+The Data Dashboard Application is a web-based tool designed for users to upload CSV files, visualize data, and apply filters to gain insights. The application features user authentication, allowing users to log in securely. It offers a dashboard with various components including data tables, charts, and export functionality.
+Key Features
+
+    User Authentication:
+        Users can register and log in to access their personalized dashboard.
+        User credentials are validated against a MongoDB database.
+
+    CSV File Upload:
+        Users can upload CSV files to populate data within the application.
+        The application uses the PapaParse library to parse CSV data efficiently.
+
+    Data Filtering:
+        Users can filter data based on various criteria such as date, region, product type, discount percent, return rate, customer satisfaction, and customer count.
+        The filters are dynamically applied to the displayed data.
+
+    Data Visualization:
+        The application displays filtered data in a user-friendly data table.
+        Users can visualize data through interactive charts based on the selected configurations.
+
+    Data Export:
+        Users have the option to export filtered data for further analysis or reporting.
+
+    Responsive Design:
+        The application is designed to be responsive and accessible on various devices, ensuring a seamless user experience.
+
+How to Run the App
+
+Download the Repositor and set the above directory
+To run the Frontend React:
+for exampla: /shibui-data-dashboard 
+Run the command: npm start
+
+To run the Backend:
+/shibui-data-dashboard/backend
+Run the command: node server.js
+
+Login with Credentials
+As of know Login with the Provided Credentials: In the login form, enter the following credentials:
+        Username: admin
+        Password: admin123
+
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
