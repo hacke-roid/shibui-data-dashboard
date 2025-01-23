@@ -9,13 +9,7 @@ const PORT = process.env.PORT;
 
 //! Middleware
 app.use(express.json());
-app.use(cors(
-  {
-    origin: ["https://shibui-data-dashboard-client.vercel.app/", "http://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  }
-));
+app.use(cors());
 
 app.use("/api/v1/user", router);
 
