@@ -1,20 +1,33 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+const { Schema, model } = require("mongoose");
 
-// User schema definition
-const userSchema = new mongoose.Schema({
-  username: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-//   isActive: { type: Boolean, default: true },
-});
+const userSchema = new Schema(
+  {
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    cotp: {
+      type: String,
+      default: null,
+    },
+    verified: {
+      type: Boolean,
+      default: false,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      expires: 20, 
+    }
+  },
+  { timestamps: true }
+);
 
-// Pre-save hook to hash passwords
-userSchema.pre('save', async function (next) {
-  if (this.isModified('password') || this.isNew) {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
-  }
-  next();
-});
+userSchema.path("email").index({ unique: true });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = model("User", userSchema);
